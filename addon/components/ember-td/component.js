@@ -39,7 +39,7 @@ export default BaseTableCell.extend({
   layout,
   tagName: 'td',
   attributeBindings:["style"],
-  style:computed('inputStyle',function(){
+  style:computed('_style',function(){
     return this.get('_style');
   }),
   /**

@@ -38,7 +38,7 @@ export default BaseTableCell.extend({
   layout,
   tagName: 'th',
   attributeBindings:["style"],
-  style:computed('inputStyle',function(){
+  style:computed('_style',function(){
     return this.get('_style');
   }),
   attributeBindings: ['columnSpan:colspan', 'rowSpan:rowspan'],
