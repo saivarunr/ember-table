@@ -6,7 +6,7 @@ import { readOnly } from '@ember/object/computed';
 import { closest } from '../../-private/utils/element';
 
 import layout from './template';
-import { get } from '@ember/object';
+import { get, computed } from '@ember/object';
 
 const COLUMN_INACTIVE = 0;
 const COLUMN_RESIZING = 1;
@@ -37,6 +37,10 @@ const COLUMN_REORDERING = 2;
 export default BaseTableCell.extend({
   layout,
   tagName: 'th',
+  attributeBindings:["style"],
+  style:computed('inputStyle',function(){
+    return this.get('_style');
+  }),
   attributeBindings: ['columnSpan:colspan', 'rowSpan:rowspan'],
   classNameBindings: ['isSortable', 'isResizable', 'isReorderable'],
 

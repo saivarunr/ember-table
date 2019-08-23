@@ -38,7 +38,10 @@ import { SELECT_MODE } from '../../-private/collapse-tree';
 export default BaseTableCell.extend({
   layout,
   tagName: 'td',
-
+  attributeBindings:["style"],
+  style:computed('inputStyle',function(){
+    return this.get('_style');
+  }),
   /**
    The API object passed in by the table row
    @argument api
