@@ -38,6 +38,10 @@ import layout from './template';
 export default Component.extend({
   layout,
   tagName: 'thead',
+  attributeBindings:["style"],
+  style:computed('_style',function(){
+    return this.get('_style');
+  }),
 
   /**
     The API object passed in by the table
